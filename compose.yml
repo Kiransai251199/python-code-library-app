@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: kiransai25/flm2026:db_image
+    image: kiransai25/flm2026:dbimage
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: kiransai25/flm2026:auth_image
+    image: kiransai25/flm2026:authimage
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: kiransai25/flm2026:book_image
+    image: kiransai25/flm2026:bookimage
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: kiransai25/flm2026:borrow_image
+    image: kiransai25/flm2026:borrowimage
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: kiransai25/flm2026:frontend
+    image: kiransai25/flm2026:appimage
     deploy:
       replicas: 1
     ports:
